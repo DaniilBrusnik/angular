@@ -22,46 +22,12 @@
             "target": "Carrier",
             "payment": "CPA",
             "compare": "Greater then",
-            "value": '',
-
+            "value": ''
           }
-          ,
-          /*{
-           "type": "condition",
-           "target": "Carrier",
-           "payment": "CPA",
-           "compare":"Greater then",
-           "value": "2"
-           },
-           {
-           "type": "logic",
-           "logicOrAnd": false,
-           },*/
-          /*[
-            {
-             id_rule : 'NewRule1',
-             "type": "condition",
-             "target": "Carrier",
-             "payment": "CPA",
-             "compare":"Greater then",
-             "value": ''
-             },*/
-            /* {
-             "type": "logic",
-             "or": false,
-             "and": true
-             },
-             {
-             "type": "condition",
-             "target": "placement",
-             "compare": "<",
-             "cpa": "2"
-             }
-          ]*/
-
         ],
         "then": "black"
-      }];
+      }
+    ];
 
     vm.addNewRule = function () {
 
@@ -75,23 +41,36 @@
       );
 
     };
+
+    vm.addNewFieldsToGroups = function (data) {
+      var newItemNo = vm.array.length + 1;
+      data.push(
+        {"id_logic": "NewRule" + newItemNo, "type": "logic", "logicOrAnd": true},
+        {"id_rule": "NewRule" + newItemNo, "type": "condition", "target": "placement", "compare": "<", "value": ""}
+      );
+
+    };
     vm.addNewGroupFields = function (rule) {
       var newItemNo = vm.array.length + 1;
       rule.push(
-        {"id_logic": "NewRule" + newItemNo, "type": "logic", "logicOrAnd": true},
-        {"id_rule": "NewRule" + newItemNo, "type": "condition", "target": "placement", "compare": "<", "value": "",
-          "if": [{
-          id_rule: 'NewRule1',
-          "type": "condition",
-          "target": "Carrier",
-          "payment": "CPA",
-          "compare": "Greater then",
-          "value": ''
-        }]}
-
-
-
+        {"id_logic": "NewRule",
+          "type": "logic",
+          "logicOrAnd": true
+        },
+        { "type": "group",
+          "nodes": [
+            {
+              id_rule: 'NewRule1',
+              "type": "condition",
+              "target": "Carrier",
+              "payment": "CPA",
+              "compare": "Greater then",
+              "value": ''
+            }
+          ]
+        }
       );
+      console.log(vm.array);
     };
     vm.addNewRule = function () {
       var newItemNo = vm.array.length + 1;
@@ -100,25 +79,17 @@
         {
           "id": "rule" + newItemNo,
           "if": [
-            {"id_rule": "NewRule" + newItemNo, "type": "condition", "target": "placement", "compare": "<", "value": ""}
+            {
+              "id_rule": "NewRule" + newItemNo,
+              "type": "condition",
+              "target": "placement",
+              "compare": "<",
+              "value": ""
+            }
           ],
           "then": "black"
         }
       );
-
-      /*  vm.array.push(
-       { "id": "rule", "if": [
-       { "id_rule" :"NewRule" +  newItemNo,
-       "type": "condition",
-       "target": "placement",
-       "compare": "<",
-       "value": ""
-       }],
-       "then": "black"
-       }
-
-       );*/
-
       console.log(vm.array);
     };
 
@@ -160,8 +131,8 @@
       }
     };
 
-    vm.typeOfArray = function (rule) {
-      if (Array.isArray(rule) == true) {
+    vm.typeOfGroup = function (rule) {
+      if (rule.type == 'group') {
         return true;
       } else {
         return false;
