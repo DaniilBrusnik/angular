@@ -1,0 +1,121 @@
+<div class="container">
+
+  <fieldset data-ng-repeat="(Index,rules) in main.array" ng-animate=" 'animate' " class="container-fluid rule">
+    <div class="all-if-rule">
+
+
+      <div class="chek">
+        <input type="checkbox" ng-model="hideRules">
+      </div>
+      <!-- <input class="chek" type="checkbox" ng-model="hideRules" >-->
+
+      <div class="if-rule" data-ng-repeat="(IndexF,rule) in rules.if" ng-hide="hideRules">
+
+        <div class="logic-rule" ng-if="main.typeOfLogic(rule)">
+          <button class="btn btn-danger removeF" ng-click="main.deleteNewfilds(rules.if,IndexF)">Field</button>
+
+          <div class="add-rule">
+
+            <button class="btn btn-success addfields" ng-click="main.addNewGroupFields(rules.if)">Group+</button>
+
+          </div>
+          <form>
+            <label class="radio-inline">
+              <input type="radio" data-ng-model="rule.logicOrAnd" ng-value="true" ng-checked="rule.logicOrAnd">
+              or </label>
+
+            <label class="radio-inline">
+              <input type="radio" data-ng-model="rule.logicOrAnd" ng-value="false" ng-checked="rule.logicOrAnd">
+              and </label>
+
+          </form>
+        </div>
+        <div class="object-rule" ng-if="main.typeOfObject(rule)">
+          <div class="dropdown">
+             <span>
+                <select data-ng-model="rule.target">
+                  <option ng-selected="rule.target == 'Placement/App'">Placement/App</option>
+                  <option ng-selected="rule.target == 'Carrier'">Carrier</option>
+                  <option ng-selected="rule.target == 'Device'">Device</option>
+                  <option ng-selected="rule.target == 'OS'">OS</option>
+                  <option ng-selected="rule.target == 'Ad exchange'">Ad exchange</option>
+                </select>
+              </span>
+          </div>
+          <div class="dropdown1">
+            if
+            <select data-ng-model="rule.payment">
+              <option ng-selected="rule.payment == 'CPA'">CPA</option>
+              <option ng-selected="rule.payment == 'Spend'">Spend</option>
+              <option ng-selected="rule.payment == 'Imressions'">Imressions</option>
+              <option ng-selected="rule.payment == 'Cliks'">Cliks</option>
+              <option ng-selected="rule.payment == 'CRM%'">CRM%</option>
+              <option ng-selected="rule.payment == 'CPC'">CPC</option>
+              <option ng-selected="rule.payment == 'CVR%'">CVR%</option>
+
+            </select>
+            </span>
+            is
+          </div>
+          <div class="Groupradio">
+
+            <label>
+              <input type="radio" ng-model="rule.compare" value=" Greater then">
+              >
+            </label><br/>
+            <label>
+              <input type="radio" ng-model="rule.compare" value="Lesser then">
+              <
+            </label><br/>
+            <label>
+              <input type="radio" ng-model="rule.compare" value="equal to">
+              =
+            </label><br/>
+            <label>
+              <input type="radio" ng-model="rule.compare" value="lesser or equal to">
+              <=
+            </label><br/>
+            <label>
+              <input type="radio" ng-model="rule.compare" value="Greater or equal to">
+              >=
+            </label><br/>
+
+          </div>
+          <div class="inputm">
+            <label>
+              $
+              <input class="money" type="number" ng-model="rule.value" min="0">
+            </label>
+          </div>
+        </div>
+        <div class="object-rule" ng-if="main.typeOfArray(rule)">
+
+
+        </div>
+
+
+        <!--<input type="text" ng-model="rule.name" name="" placeholder="Enter name">
+        <button class="btn btn-danger remove" ng-click="removeChoice($index)">-</button>-->
+      </div>
+      <div class="add-rule">
+        <button class="btn btn-success addfields" ng-click="main.addNewFields(rules.if)">Field123</button>
+        <button class="btn btn-success addfields" ng-click="main.addNewGroupFields(rules.if)">Group123</button>
+      </div>
+      <div class="remove">
+        <button class="btn btn-danger " ng-click="main.deleteNewlogic(Index)">RULE DELETE</button>
+      </div>
+
+      <div class="then-rule">
+      </div>
+
+
+  </fieldset>
+  <!--<pre data-ng-repeat="rule in rules.if"> {{ rule.target }}</pre>-->
+  <button class="btn btn-primary" ng-click="main.addNewRule(rules)">Add rule</button>
+
+
+  <!--<button class="btn btn-danger" ng-click="main.deleteNewRule()">Delete rule</button>-->
+  <p>{{main.array}}</p>
+
+</div>
+

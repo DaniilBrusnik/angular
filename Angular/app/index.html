@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<script>
+  angular.module('value', [])
+    .controller('ExampleController', ['$scope', function ($scope) {
+      $scope.names = ['rule.or', 'rule.and'];
+
+      //$scope.my = { favorite: 'unicorns' };
+    }]);
+</script>
+<fieldset data-ng-repeat="rules in CO.array" class="container-fluid rule">
+  <div class="all-if-rule">
+    <div class="if-rule" data-ng-repeat="rule in rules.if">
+      <div class="logic-rule" ng-if="CO.typeOfLogic(rule)">
+        <label><input type="radio" data-ng-model="rule" data-ng-value="rule.or" ng-checked="rule.or"> or </label>
+        <br>
+        <label><input type="radio" data-ng-model="rule" data-ng-value="rule.and" ng-checked="rule.and"> and </label>
+      </div>
+      <div ng-if="CO.typeOfObject(rule)">
+
+        <p>obj - {{rule}}</p>
+      </div>
+      <div ng-if="CO.typeOfArray(rule)">
+
+        <p>array - {{rule}}</p>
+      </div>
+
+
+       <input type="text" ng-model="rule.name" name="" placeholder="Enter name">
+      <button class="btn btn-danger remove" ng-cliremoveChoice($index)ck="">-</button>
+
+    </div>
+
+    <div class="add-rule">
+      <button class="btn btn-success addfields" ng-click="addNewChoiceB(rule)">+</button>
+    </div>
+  </div>
+  <div class="then-rule">
+
+  </div>
+
+</fieldset>
+<button class="btn btn-primary" ng-click="CO.addNewRule()">Add rule</button>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="view1/view1.js"></script>
+<script src="view2/view2.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
