@@ -32,6 +32,76 @@
   vertical-align: middle;
   float: none;
 }
+.animate-if.ng-enter, .animate-if.ng-leave {
+  -webkit-transition: 1s linear all;
+  -moz-transition: 1s linear all;
+  -ms-transition: 1s linear all;
+  -o-transition: 1s linear all;
+  transition: 1s linear all;
+}
+/* du début de l'entrée */
+.animate-if.ng-enter {
+  max-height: 0;
+  opacity: 0;
+}
+/* à la fin de l'entrée */
+.animate-if.ng-enter.ng-enter-active {
+  max-height: 999px;
+  opacity:1;
+}
+/* du début de la sortie */
+.animate-if.ng-leave {
+  max-height: 999px;
+  opacity:1;
+}
+/* à la fin de la sortie */
+.animate-if.ng-leave.ng-leave-active {
+  max-height: 0;
+  opacity:1;
+}
+.RuleString{
+  background-color: #ffffff;
+
+}
+.GroupRepeat{
+  display:inline-block;
+}
+.object-group{
+  overflow: hidden;
+  position: relative;
+  min-height:20px;
+  background-color: #8ae27c;
+
+
+
+  .bracet-begin{
+    position: absolute;
+    border-left:2px solid #ff0009;
+    border-top:2px solid #ff0009;
+    border-bottom:2px solid #ff0009;
+
+    left: 0;
+    height: 100%;
+    width: 7px;
+z-index: 1;
+    border-radius: 4px;
+
+  }
+
+  .bracet-end{
+    position: absolute;
+    border-right:2px solid #ff0009;
+    border-top:2px solid #ff0009;
+    border-bottom:2px solid #ff0009;
+    width: 7px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 3px;}
+}
+
+
+
 
 
 .container-fluid{
@@ -64,14 +134,10 @@
       position: relative;
       background-color: #ee625d;
       border-radius: 5px;
-
       width: 91px;
-
       //margin-left: -91px;
       display: inline-block;
-
       z-index: 1;
-
     }
 
 
@@ -80,7 +146,7 @@
       position: relative;
       width: 190px;
       height: 140px;
-
+      margin-top:5px;
 margin-right: 5px;
 
 
@@ -102,7 +168,7 @@ margin-right: 5px;
         left: 10px;
         top: 95px;
         .money {
-          width: 60px;
+          width: 80px;
         }
       }
       .Groupradio {
