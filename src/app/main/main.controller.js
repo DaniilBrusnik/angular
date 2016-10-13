@@ -10,7 +10,7 @@
     function MainController($timeout, webDevTec, toastr, $scope) {
 
       var vm = this;
-
+      vm.k=0;
 
       vm.array = [
         {
@@ -19,10 +19,10 @@
             {
               id_rule: 'NewRule1',
               "type": "condition",
-              "target": "",
-              "payment": "",
-              "compare": "",
-              "value": ''
+              "target": "Placement/App",
+              "payment": "CPA",
+              "compare": ">",
+              "value": 0
             }
           ],
           "then": "black"
@@ -34,14 +34,26 @@
           var newItemNo = vm.array.length + 1;
           rule.$parent.$parent.$parent.$parent.rule.push(
             {"id_logic": "NewRule" + newItemNo, "type": "logic", "logicOrAnd": true},
-            {"id_rule": "NewRule" + newItemNo, "type": "condition", "target": "placement", "compare": "<", "value": ""}
+            {"id_rule": "NewRule" + newItemNo,
+              "type": "condition",
+              "target": "Placement/App",
+              "payment": "CPA",
+              "compare": ">",
+              "value": 0
+            }
           );
 
         } else {
           var newItemNo = vm.array.length + 1;
           rule.$parent.$parent.rules.if.push(
             {"id_logic": "NewRule" + newItemNo, "type": "logic", "logicOrAnd": true},
-            {"id_rule": "NewRule" + newItemNo, "type": "condition", "target": "placement", "compare": "<", "value": ""}
+            {"id_rule": "NewRule" + newItemNo,
+              "type": "condition",
+              "target": "Placement/App",
+              "payment": "CPA",
+              "compare": ">",
+              "value": 0
+            }
           );
         }
       };
@@ -58,10 +70,10 @@
               {
                 id_rule: 'NewGroup' + newItemNo,
                 "type": "condition",
-                "target": "Carrier",
+                "target": "Placement/App",
                 "payment": "CPA",
                 "compare": ">",
-                "value": ''
+                "value": 0
               }
             ]
           );
@@ -72,10 +84,10 @@
               {
                 id_rule: 'NewGroup' + newItemNo,
                 "type": "condition",
-                "target": "Carrier",
+                "target": "Placement/App",
                 "payment": "CPA",
                 "compare": ">",
-                "value": ''
+                "value": 0
               }
             ]
           );
@@ -90,10 +102,10 @@
             "if": [
               {
                 "id_rule": "NewRule" + newItemNo,
-                "type": "condition",
-                "target": "placement",
-                "compare": "<",
-                "value": ""
+                "target": "Placement/App",
+                "payment": "CPA",
+                "compare": ">",
+                "value": 0
               }
             ],
             "then": "black"
@@ -113,10 +125,6 @@
         } else {
           rule.$parent.$parent.rules.if.splice(ind, 2);
         }
-      };
-
-      vm.test = function (rule) {
-        console.log(rule);
       };
 
       vm.typeOfLogic = function (rule) {

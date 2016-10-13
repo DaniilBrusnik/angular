@@ -32,58 +32,33 @@
   vertical-align: middle;
   float: none;
 }
-.animate-if.ng-enter, .animate-if.ng-leave {
-  -webkit-transition: 1s linear all;
-  -moz-transition: 1s linear all;
-  -ms-transition: 1s linear all;
-  -o-transition: 1s linear all;
-  transition: 1s linear all;
-}
-/* du début de l'entrée */
-.animate-if.ng-enter {
-  max-height: 0;
-  opacity: 0;
-}
-/* à la fin de l'entrée */
-.animate-if.ng-enter.ng-enter-active {
-  max-height: 999px;
-  opacity:1;
-}
-/* du début de la sortie */
-.animate-if.ng-leave {
-  max-height: 999px;
-  opacity:1;
-}
-/* à la fin de la sortie */
-.animate-if.ng-leave.ng-leave-active {
-  max-height: 0;
-  opacity:1;
-}
+
 .RuleString{
   background-color: #ffffff;
 
 }
+
 .GroupRepeat{
   display:inline-block;
+
 }
 .object-group{
-  overflow: hidden;
+
   position: relative;
   min-height:20px;
   background-color: #8ae27c;
-
+  margin-top:5px;
 
 
   .bracet-begin{
     position: absolute;
-    border-left:2px solid #ff0009;
-    border-top:2px solid #ff0009;
-    border-bottom:2px solid #ff0009;
-
+    border-left: 2px solid #ff0009;
+    border-top: 2px solid #ff0009;
+    border-bottom: 2px solid #ff0009;
     left: 0;
     height: 100%;
     width: 7px;
-z-index: 1;
+    z-index: 1;
     border-radius: 4px;
 
   }
@@ -94,6 +69,7 @@ z-index: 1;
     border-top:2px solid #ff0009;
     border-bottom:2px solid #ff0009;
     width: 7px;
+    margin-left: 3px;
     height: 100%;
     top: 0;
     right: 0;
@@ -116,73 +92,67 @@ z-index: 1;
   height: 0;
 }
 .all-if-rule {
-
+position: relative;
 
   .chec {
     position: relative;
     margin-top: 50px;
   }
 
-
   .if-rule {
     float: left;
-
+    position: relative;
     margin-bottom: 3px;
-
-
     .logic-rule {
       position: relative;
       background-color: #ee625d;
       border-radius: 5px;
-      width: 91px;
-      //margin-left: -91px;
+      width: 40px;
       display: inline-block;
       z-index: 1;
     }
-
-
     .object-rule {
-//position: absolute;
       position: relative;
-      width: 190px;
+      width: 180px;
       height: 140px;
-      margin-top:5px;
-margin-right: 5px;
-
-
+      margin-right: 5px;
       background-color: #00b3ee;
-
-
       .dropdown {
         position: absolute;
         left: 21px;
-        top: 35px;
+        top: 15px;
       }
       .dropdown1 {
         position: absolute;
         left: 10px;
-        top: 65px;
+        top: 45px;
       }
       .inputm {
         position: absolute;
         left: 10px;
-        top: 95px;
+        top: 65px;
         .money {
           width: 80px;
         }
       }
       .Groupradio {
-        margin-left: 150px;
+        float: right;
       }
     }
   }
-
+.radio-inline.checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  /* margin-bottom: -19px; */
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+  /* transform: rotate(-90deg); */
+}
   .add-rule {
     float: left;
-    display: inline-block;
-    .addfields {
-
-    }
+    display: inline-block
   }
   .remove {
     background-color: #ba1d18;
@@ -191,9 +161,18 @@ margin-right: 5px;
     height: 0px;
     left:1062px;
     bottom: 34px;
-
   }
-
+.addfields{
+  top: 106px;
+  position: absolute;
+  z-index: 1;
+}
+  .addgroup{
+    top: 106px;
+    left:70px;
+    position: absolute;
+    z-index: 1;
+  }
 }
 
 /**
