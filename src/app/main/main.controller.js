@@ -100,8 +100,8 @@
           {
             "id": "rule" + newItemNo,
             "if": [
-              {
-                "id_rule": "NewRule" + newItemNo,
+              {"id_rule": "NewRule" + newItemNo,
+                "type": "condition",
                 "target": "Placement/App",
                 "payment": "CPA",
                 "compare": ">",
@@ -112,6 +112,7 @@
           }
         );
       };
+
 
 
       vm.deleteRule = function (ind) {

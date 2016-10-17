@@ -34,21 +34,27 @@
 }
 
 .RuleString{
-  background-color: #ffffff;
+
 
 }
 
+.infoRule{
+  min-width: 140px;
+
+}
+.infotarget{
+  text-align: center;
+  border-bottom: 1px solid #353535;
+}
+.info{
+  text-align: center;
+}
 .GroupRepeat{
   display:inline-block;
-
 }
 .object-group{
-
   position: relative;
   min-height:20px;
-  background-color: #8ae27c;
-  margin-top:5px;
-
 
   .bracet-begin{
     position: absolute;
@@ -58,9 +64,8 @@
     left: 0;
     height: 100%;
     width: 7px;
-    z-index: 1;
+    z-index: 3;
     border-radius: 4px;
-
   }
 
   .bracet-end{
@@ -71,19 +76,16 @@
     width: 7px;
     margin-left: 3px;
     height: 100%;
+    z-index: 2;
     top: 0;
     right: 0;
     border-radius: 3px;}
 }
-
-
-
-
-
 .container-fluid{
   width:1200px ;
   min-width:1200px ;
-  background: #b2d4d4;
+  background: rgba(181, 183, 185, 0.98);
+  border-radius: 5px;
   border: 1px solid #020002;
   margin-bottom: 10px;
 
@@ -94,87 +96,441 @@
 .all-if-rule {
 position: relative;
 
+
   .chec {
     position: relative;
     margin-top: 50px;
   }
 
+  .GroupShow{
+    margin-right: 5px;
+    margin-left: 7px;
+  }
+  .AllRule{
+    background-color: rgba(51,122,183,.51);
+  }
   .if-rule {
-    float: left;
     position: relative;
-    margin-bottom: 3px;
+    display: inline-block;
+
     .logic-rule {
       position: relative;
-      background-color: #ee625d;
-      border-radius: 5px;
+      height: 140px;
       width: 40px;
+      margin-left: 3px;
       display: inline-block;
       z-index: 1;
+      .RadioRule{
+        position: absolute;
+        height: 140px;
+        width: 100%;
+        left: 5px;
+        }
+      .RadioRuleOr{
+        position: absolute;
+        top: 36px;
+        width: 41px;
+        height: 50px;
+        left: 0px;
+        z-index: 3;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .RadioRuleAnd{
+        position: absolute;
+        top: 86px;
+        width: 41px;
+        height: 50px;
+        left: 0px;
+        z-index: 3;
+        opacity:0;
+        cursor: pointer;
+      }
+        .OrLogic{
+          text-align: center;
+          width: 100%;
+
+          border: 2px solid #ffffff;
+          height: 45px;
+          margin-top: 45px;
+        }
+      .ORback input:hover + .OrLogic  {
+        color: #ffffff;
+        background-color: #606060;
+      }
+      .ORback input:active + .OrLogic  {
+        color: #ffffff;
+        box-shadow: 0 0 1px rgb(0, 0, 0), inset 1px 1px 5px  #101010;
+        background-color: #606060;
+      }
+      .ORback input:checked + .OrLogic {
+        color: #FFFFFF;
+        background-color: #606060;
+      }
+        .AndLogic{
+
+          text-align: center;
+          width: 100%;
+          border: 2px solid #ffffff;
+          height: 45px;
+        }
+      .ANDback input:hover+ .AndLogic{
+        color: #ffffff;
+        background-color: #606060
+      }
+      .ANDback input:active + .AndLogic{
+        color: #ffffff;
+        box-shadow: 0 0 1px rgb(0, 0, 0), inset 1px 1px 5px #000000;
+        background-color: #606060
+      }
+      .ANDback input:checked + .AndLogic {
+        color: #FFFFFF;
+        background-color: #606060;
+      }
+
+      }
+      .removeF {
+        position: absolute;
+        top: 0;
+        height: 40px;
+        left: 5px;
+        width: 100%;
+        padding-left: 6px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #fff;
+        z-index: 1;
+        background-color: #a60003;
+        border-radius: 0px;
+        border: none;
+      }
+      .removeF:hover {
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px #000000;
+        background: #d3041a;
+      }
+    .removeF:active{
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px #000000;
+      background: -webkit-linear-gradient(bottom,#d3041a 0%, #292929 100%);
+      background: -moz-linear-gradient(bottom, #d3041a 0%, #292929 100%);
+      background: -ms-linear-gradient(bottom, #d3041a 0%, #292929 100%);
+      background: -o-linear-gradient(bottom, #d3041a 0%, #292929 100%);
+      background: linear-gradient(bottom, #d3041a 0%, #292929 100%);}
+
     }
+    .RuleShow {
+      position: relative;
+      width: 180px;
+      height: 140px;
+      margin-right: 10px;
+      left: 5px;
+    }
+
     .object-rule {
       position: relative;
       width: 180px;
       height: 140px;
-      margin-right: 5px;
-      background-color: #00b3ee;
-      .dropdown {
-        position: absolute;
-        left: 21px;
-        top: 15px;
+      margin-right: 10px;
+      color: #FFFFFF;
       }
-      .dropdown1 {
-        position: absolute;
-        left: 10px;
-        top: 45px;
-      }
-      .inputm {
-        position: absolute;
-        left: 10px;
-        top: 65px;
-        .money {
-          width: 80px;
+    .RuleShow {
+        position: relative;
+        width: 170px;
+        height: 140px;
+        margin-right: 10px;
+        left: 5px;
+        background-color: rgba(51,122,183,.51);
+        .dropdown {
+          position: absolute;
+          left: 45px;
+          top: 10px;
+
+        }
+        .dropdown1 {
+          position: absolute;
+          left: 33px;
+          top: 40px;
+          width: 140px;
+          .select1 {
+            width: 120px;
+          }
+        }
+        .dropdown2 {
+          position: absolute;
+          left: 31px;
+          width: 145px;
+          top: 70px;
+          .select2 {
+            width: 73px;
+          }
         }
       }
-      .Groupradio {
-        float: right;
+    .inputm {
+      position: absolute;
+      left: 43px;
+      top: 100px;
+      .money {
+        height: 20px;
+       width: 80px;
       }
     }
   }
-.radio-inline.checkbox-inline {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  /* margin-bottom: -19px; */
-  vertical-align: middle;
-  font-weight: normal;
-  cursor: pointer;
-  /* transform: rotate(-90deg); */
+  select{
+    background-color: #606060;
+    border-radius: 5px;
+  }
+  select:hover {
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    background-color: #606060;
+
+  }
+  input{
+    color: #0f0f0f;
+  }
+  .Infologic{
+    position: relative;
+    display: inline-block;
+    background-color: #606060;
+    color: #070707;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
+    right: -4px;
+    width: 30px;
+    height: 57px;
+  }
+
+.removeInfo{
+  position: absolute;
+  top: 0;
+  height: 30px;
+  left: 0;
+  width: 100%;
+  padding-left: 6px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  z-index: 1;
+  background-color: #a60003;
+  border-radius: 0px;
+  border: none;
 }
+.removeInfo:hover{
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px #000000;
+    background: #d3041a;
+  }
+.removeInfo:active{
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px #000000;
+  background: #d3041a;
+}
+  .InfoOr{
+    color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 30px;
+    text-align: center;
+  }
+  .InfoAnd{
+    color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 30px;
+    text-align: center;
+  }
   .add-rule {
     float: left;
     display: inline-block
   }
-  .remove {
-    background-color: #ba1d18;
-    position: relative;
-    width: 45px;
-    height: 0px;
-    left:1062px;
-    bottom: 34px;
-  }
-.addfields{
-  top: 106px;
+  .addfields{
   position: absolute;
+  top: 0;
+  height: 50%;
+  left:0;
+  width: 35px;
+  padding-left: 6px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
   z-index: 1;
+  background-color: #12c71b;
+  border-radius: 0px;
+
 }
   .addgroup{
-    top: 106px;
-    left:70px;
+    border-top: solid rgba(0, 0, 0, 0.23) 1px;
     position: absolute;
-    z-index: 1;
+    bottom: 0;
+    height: 50%;
+    left:0;
+    width: 35px;
+     padding-left: 6px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+        z-index: 1;
+    background-color: #12c71b;
+    border-radius: 0px;
   }
+  .RuleString {
+    position: relative;
+    color: #FFFFFF;
+    margin-left: 5px;
+    margin-top: 3px;
+    .addfieldsG{
+      border: solid rgba(0, 0, 0, 0.23) 1px;
+      position: absolute;
+      top: 0;
+      height: 30px;
+      right: 40px;
+      width: 40px;
+      padding-left: 9px;
+      padding-top:3px;
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff;
+      display: inline-block;
+      z-index: 1;
+      background-color: #12c71b;
+      border-radius: 5px;
+
+    }
+    .addgroupG{
+      border: solid rgba(0, 0, 0, 0.23) 1px;
+      position: absolute;
+      top: 0;
+      height: 30px;
+      right: 0;
+      width: 40px;
+      padding-left: 9px;
+      padding-top:3px;
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff;
+      display: inline-block;
+      z-index: 1;
+      background-color: #12c71b;
+      border-radius: 5px;
+
+    }
+
+
+  }
+  .green:hover {
+  color: #FFFFFF;
+  box-shadow: 0 0 1px rgba(167, 167, 167, 0.5), inset 1px 1px 1px #5d5d5d;;
+  background: #54c261;
+  background-image: -webkit-linear-gradient(top, #54c261, #39bf4d);
+  background-image: -moz-linear-gradient(top, #54c261, #39bf4d);
+  background-image: -ms-linear-gradient(top, #54c261, #39bf4d);
+  background-image: -o-linear-gradient(top, #54c261, #39bf4d);
+  background-image: linear-gradient(to bottom, #54c261, #39bf4d);
 }
 
+.onoff {
+  margin-left: -27px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  left: 27px;;
+  zoom: 1;
+  position: relative;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.onoff1 {
+  margin-left: -27px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  left: -1px;
+  z-index: 3;
+  opacity: 0;
+  top: -5px;
+  zoom: 1;
+  position: relative;
+  cursor: pointer;
+  width: 61px;
+  height: 36px;
+  line-height: 30px;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.onoff label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: #cd3c3c;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #FFF;
+  -webkit-transition: background 0.3s, text-indent 0.3s;
+  -moz-transition: background 0.3s, text-indent 0.3s;
+  -o-transition: background 0.3s, text-indent 0.3s;
+  transition: background 0.3s, text-indent 0.3s;
+
+  text-indent: 27px;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4) inset;
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4) inset;
+}
+.onoff label:hover{
+  box-shadow: 0 0 1px rgb(253, 253, 253);
+}
+.onoff label:after {
+  content: 'Hide';
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  font-size: 12px;
+  color: #fffdfe;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.35);
+  z-index: 1;
+}
+.onoff label:before {
+  content: '';
+  width: 15px;
+  height: 24px;
+  border-radius: 3px;
+  background: #FFF;
+  position: absolute;
+  z-index: 2;
+  top: 3px;
+  left: 3px;
+  display: block;
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  -o-transition: left 0.3s;
+  transition: left 0.3s;
+  -webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+.onoff input:checked + label {
+  background: #378b2c;
+  text-indent: 8px;
+}
+.onoff input:checked + label:after {
+
+  content: 'Show';
+  color: #fffdfe;
+}
+.onoff input:checked + label:before {
+  left: 42px;
+}
+
+
+
+
+.DeleteRule{float: right}
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your less files automatically

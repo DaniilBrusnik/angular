@@ -4,8 +4,14 @@
     <div class="all-if-rule">
       <div>Rules for All Domains:</div>
       <div class="chek">
-        <input type="checkbox" ng-model="hideRules">
+
+        <p class="onoff">
+          <input type="checkbox" ng-model="hideRules" id="checkboxID1"  value="1">
+          <label for="checkboxID1"></label>
+        </p>
+        <div class="DeleteRule">
         <button class="btn btn-danger " ng-click="main.deleteRule(Index)">RULE DELETE</button>
+        </div>
       </div>
 
       <div class="if-rule" data-ng-repeat="(IndexF,rule) in rules.if" ng-include="'app/main/rule.html'">
