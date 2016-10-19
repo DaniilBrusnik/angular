@@ -1,12 +1,12 @@
 <div class="container">
 
-  <fieldset data-ng-repeat="(Index,rules) in main.array" ng-animate=" 'animate' " class="container-fluid rule">
+  <fieldset data-ng-repeat="(Index,rules) in main.array"  class="container-fluid rule">
     <div class="all-if-rule">
       <div>Rules for All Domains:</div>
       <div class="chek">
 
         <p class="onoff">
-          <input type="checkbox" ng-model="hideRules" id="checkboxID1"  value="1">
+          <input class="onoff2" type="checkbox" ng-model="hideRules" id="checkboxID1"  value="1">
           <label for="checkboxID1"></label>
         </p>
         <div class="DeleteRule">
@@ -14,14 +14,45 @@
         </div>
       </div>
 
-      <div class="if-rule" data-ng-repeat="(IndexF,rule) in rules.if" ng-include="'app/main/rule.html'">
+      <div class="if-rule" data-ng-repeat="(IndexF,rule) in rules.if"  ng-include="'app/main/rule.html'" >
       </div>
+
+      <div class="then"ng-hide="hideRules"  >
+        <div class="thentext">Then:</div>
+
+        <input type="radio" class="r-optionc" ng-model="rules.then" id="r-option" value="Blacklist">
+        <label class="lr-option" for="r-option"> Blacklist</label>
+
+        <input type="radio"  class="r1-optionc" ng-model="rules.then" id="r1-option" value="Whitelist">
+        <label class="lr1-option" for="r1-option"> Whitelist</label>
+
+        <input type="radio"class="r2-optionc" id="r2-option" ng-model="rules.then" value="suspenf for review">
+        <label class="lr2-option" for="r2-option"> Suspend for review</label>
+      </div>
+
+      <div class="then-little" ng-show="hideRules" >
+        <div class="thentext-little">Then:</div>
+
+        <input type="radio" class="r-optionc-little" ng-model="rules.then" id="r-option-little" value="Blacklist">
+        <label class="lr-option-little" for="r-option-little"> Blacklist</label>
+
+        <input type="radio"  class="r1-optionc-little" ng-model="rules.then" id="r1-option-little" value="Whitelist">
+        <label class="lr1-option-little" for="r1-option-little"> Whitelist</label>
+
+        <input type="radio"class="r2-optionc-little" id="r2-option-little" ng-model="rules.then" value="suspenf for review">
+        <label class="lr2-option-little" for="r2-option-little"> Suspend for review</label>
+      </div>
+
+
+
+
     </div>
+
 
   </fieldset>
 
   <button class="btn btn-primary" ng-click="main.addNewRule(rules)">Add rule</button>
-
+  <button class="btn btn-success" ng-click="">Save rule</button>
 </div>
 
 

@@ -25,7 +25,7 @@
               "value": 0
             }
           ],
-          "then": "black"
+          "then": "Blacklist"
         }
       ];
 
@@ -108,7 +108,7 @@
                 "value": 0
               }
             ],
-            "then": "black"
+            "then": "Blacklist"
           }
         );
       };
@@ -130,6 +130,13 @@
 
       vm.typeOfLogic = function (rule) {
         if (rule.type === 'logic') {
+          return true;
+        } else {
+          return false;
+        }
+      };
+      vm.typeOfThen = function (rules) {
+        if (rules.then === 'Blacklist') {
           return true;
         } else {
           return false;
